@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row card-group">
+        <div class="col-sm-4" *ngFor="let car of cars">
+            <a routerLink="/detail/{{car.id}}">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="https://loremflickr.com/362/200/car?random=5" alt="Card image cap">
+                    <h4 class="card-title"><b>Modelo:</b> {{car.model}}</h4>
+                    <p class="card-text">
+                        <b>Año:</b> {{ car.year }} <br />
+                        <b>Marca:</b> {{ car.brand }} <br />
+                        <b>Precio:</b> {{ car.price }} <br />
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+    
