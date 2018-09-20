@@ -1,8 +1,32 @@
-<div class="card mb-3">
-    <img class="card-img-top" src="https://loremflickr.com/1149/180/car?random=5" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<div class="container">
+    <div class="card mb-3">
+        <img class="card-img-top" src="https://loremflickr.com/1149/180/car?random=5" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ car.car.model }}</h5>
+            <p class="card-text">
+                <b>Año:</b> {{ car.car.year }} <br />
+                <b>Marca:</b> {{ car.car.brand }} <br />
+                <b>Precio:</b> {{ car.car.price }} <br />
+            </p>
+        </div>
     </div>
+    <div *ngIf="car.detail.length == 0" class="alert alert-success" role="alert">
+        No hay caracteristicas disponibles para este vehiculo
+    </div>
+
+    <div *ngIf="car.detail.length > 0" >
+        <table class="table" *ngFor="let detail  of car.detail">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" colspan="2">{{ detail.category.name }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let det of detail.detail">
+                    <td width="50%">{{ det.name }}</td>
+                    <td width="50%">{{ det.description }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
 </div>

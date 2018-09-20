@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Seleccionar vehiculo</h5>
+            <div class="row">
+                <div class="col-sm-4 py-2">
+                    <img src="assets/images/car.png" class="mx-auto d-block" width="70%" />
+                    <select class="custom-select" (change)="mostrarCarro(0, $event.target.value)">
+                        <option selected value="-1">Seleccione un vehiculo</option>
+                        <option value="{{ car.id }}" *ngFor="let car of cars">{{ car.model }}</option>
+                    </select>
+                </div>
+                <div class="col-sm-4 py-2">
+                    <img src="assets/images/car.png" class="mx-auto d-block" width="70%" />
+                    <select class="custom-select" (change)="mostrarCarro(1, $event.target.value)">
+                        <option selected value="-1">Seleccione un vehiculo</option>
+                        <option value="{{ car.id }}" *ngFor="let car of cars">{{ car.model }}</option>
+                    </select>
+                </div>
+                <div class="col-sm-4 py-2">
+                    <img src="assets/images/car.png" class="mx-auto d-block" width="70%" />
+                    <select class="custom-select" (change)="mostrarCarro(2, $event.target.value)">
+                        <option selected value="-1">Seleccione un vehiculo</option>
+                        <option value="{{ car.id }}" *ngFor="let car of cars">{{ car.model }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <ng-container *ngIf="details.length > 0">
+            <div class="col-sm-4 py-2" *ngFor="let detail of details">
+                <div *ngIf="detail == null || detail.detail.length == 0" class="alert alert-success" role="alert">
+                    No hay caracteristicas disponibles para este vehiculo
+                </div>
+                <div *ngIf=" detail != null && detail.detail.length > 0">
+                    <table class="table" *ngFor="let d of detail.detail">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" colspan="2">{{ d.category.name }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let d2 of d.detail">
+                                <td width="50%">{{ d2.name }}</td>
+                                <td width="50%">{{ d2.description }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+        </ng-container>
+    </div>
+</div>

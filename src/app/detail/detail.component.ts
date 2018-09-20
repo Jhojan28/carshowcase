@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CarService } from '../services/car.service';
 import { ActivatedRoute } from '@angular/router';
+import { DetailService } from '../services/detail.service';
 
 @Component({
 	selector: 'app-detail',
@@ -8,9 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailComponent {
 	id = null
-	car:any ={}
-	constructor(private route:ActivatedRoute, private carService:CarService) {
+	car:any = {}
+	constructor(private route:ActivatedRoute, private detailService:DetailService) {
 		this.id = this.route.snapshot.params['id']
-		this.car = carService.getCar(this.id)
+		this.car = detailService.getDetail(this.id)
+		console.log(this.car)
 	}
 }

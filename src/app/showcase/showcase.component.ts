@@ -11,8 +11,4 @@ export class ShowcaseComponent {
 	constructor(private carSerivice:CarService) {
 		this.cars = carSerivice.getCars()
 	}
-
-	findByBrand(brand) {
-		this.cars = this.carSerivice.getCarsByBrand(brand)
-	}
 }
