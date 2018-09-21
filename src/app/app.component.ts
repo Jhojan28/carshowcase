@@ -7,8 +7,4 @@ import { ShowcaseComponent } from './showcase/showcase.component';
   	styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  	brand:string = "";
-
-	constructor(){}
-	  
 }

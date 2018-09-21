@@ -1,12 +1,12 @@
 <div class="container">
     <div class="card mb-3">
-        <img class="card-img-top" src="https://loremflickr.com/1149/180/car?random=5" alt="Card image cap">
+        <img class="card-img-top" src="{{ car.car.picture }}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{ car.car.model }}</h5>
             <p class="card-text">
                 <b>Año:</b> {{ car.car.year }} <br />
                 <b>Marca:</b> {{ car.car.brand }} <br />
-                <b>Precio:</b> {{ car.car.price }} <br />
+                <b>Precio:</b> {{ car.car.price | currency:'COP' }} <br />
             </p>
         </div>
     </div>

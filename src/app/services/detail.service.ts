@@ -208,7 +208,7 @@ export class DetailService {
         let result:any = {}
         ids.forEach(id => {
             result = this.getDetail(id)
-            response.push({ detail: result.detail })
+            response.push({ detail: result.detail, car: result.car })
         });
         return response
     }

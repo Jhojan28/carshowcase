@@ -12,6 +12,5 @@ export class DetailComponent {
 	constructor(private route:ActivatedRoute, private detailService:DetailService) {
 		this.id = this.route.snapshot.params['id']
 		this.car = detailService.getDetail(this.id)
-		console.log(this.car)
 	}
 }

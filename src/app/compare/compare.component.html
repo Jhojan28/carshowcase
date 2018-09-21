@@ -4,21 +4,21 @@
             <h5 class="card-title">Seleccionar vehiculo</h5>
             <div class="row">
                 <div class="col-sm-4 py-2">
-                    <img src="assets/images/car.png" class="mx-auto d-block" width="70%" />
+                    <img [src]="imagePaths[0]" class="mx-auto d-block py-2" width="70%" />
                     <select class="custom-select" (change)="mostrarCarro(0, $event.target.value)">
                         <option selected value="-1">Seleccione un vehiculo</option>
                         <option value="{{ car.id }}" *ngFor="let car of cars">{{ car.model }}</option>
                     </select>
                 </div>
                 <div class="col-sm-4 py-2">
-                    <img src="assets/images/car.png" class="mx-auto d-block" width="70%" />
+                    <img [src]="imagePaths[1]" class="mx-auto d-block py-2" width="70%" />
                     <select class="custom-select" (change)="mostrarCarro(1, $event.target.value)">
                         <option selected value="-1">Seleccione un vehiculo</option>
                         <option value="{{ car.id }}" *ngFor="let car of cars">{{ car.model }}</option>
                     </select>
                 </div>
                 <div class="col-sm-4 py-2">
-                    <img src="assets/images/car.png" class="mx-auto d-block" width="70%" />
+                    <img [src]="imagePaths[2]" class="mx-auto d-block py-2" width="70%" />
                     <select class="custom-select" (change)="mostrarCarro(2, $event.target.value)">
                         <option selected value="-1">Seleccione un vehiculo</option>
                         <option value="{{ car.id }}" *ngFor="let car of cars">{{ car.model }}</option>
@@ -34,7 +34,8 @@
                 <div *ngIf="detail == null || detail.detail.length == 0" class="alert alert-success" role="alert">
                     No hay caracteristicas disponibles para este vehiculo
                 </div>
-                <div *ngIf=" detail != null && detail.detail.length > 0">
+                <div *ngIf="detail != null && detail.detail.length > 0">
+                    <h5>{{ detail.car.model }}</h5>
                     <table class="table" *ngFor="let d of detail.detail">
                         <thead class="thead-dark">
                             <tr>

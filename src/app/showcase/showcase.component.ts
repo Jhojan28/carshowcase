@@ -1,5 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { CarService } from '../services/car.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'app-showcase',
@@ -8,7 +9,17 @@ import { CarService } from '../services/car.service';
 })
 export class ShowcaseComponent {
 	cars:any = []
-	constructor(private carSerivice:CarService) {
-		this.cars = carSerivice.getCars()
+	search:string = ""
+	brand:string = ""
+	constructor(private route:ActivatedRoute,private carSerivice:CarService) {
+		this.route.queryParamMap.subscribe(params => {
+			this.search = params.get("search")
+			if(typeof this.search !== 'undefined' && this.search !== null && this.search !== "") {
+				this.cars = carSerivice.getCarsByBrand(this.search)
+			} else {
+				this.cars = carSerivice.getCars()
+				this.brand = ""
+			}
+		})
 	}
 }

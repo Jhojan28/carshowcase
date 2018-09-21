@@ -1,15 +1,27 @@
 <div class="container">
+    <div class="row py-2">
+        <div class="col-sm-12">
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Buscar por marca" aria-label="Buscar por marca" [(ngModel)]="brand">
+                <div class="input-group-append">
+                    <a class="btn btn-primary" routerLink="/home" [queryParams]="{search: brand}">Buscar</a>
+                    <a class="btn btn-secondary" routerLink="/home">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-4 py-2" *ngFor="let car of cars">
-            <a routerLink="/detail/{{car.id}}">
+            <a routerLink="/detail/{{car.id}}" class="no-decoration">
                 <div class="card card-body h-100">
-                    <img class="card-img-top" src="https://loremflickr.com/362/200/car?random=5" alt="Card image cap">
+                    <img class="card-img-top" src="{{car.picture}}" alt="Card image cap">
                     <h4 class="card-title"><b>Modelo:</b> {{car.model}}</h4>
-                    <p class="card-text">
+                    <p class="card-text py-3">
                         <b>Año:</b> {{ car.year }} <br />
                         <b>Marca:</b> {{ car.brand }} <br />
-                        <b>Precio:</b> {{ car.price }} <br />
+                        <b>Precio:</b> <span class="text-success">{{ car.price | currency:'COP'}}</span> <br />
                     </p>
+                    <div class="btn btn-primary bottom-align-text">Ver más</div>
                 </div>
             </a>
         </div>
