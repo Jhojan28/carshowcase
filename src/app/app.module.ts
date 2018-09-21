@@ -10,7 +10,6 @@ import { DetailComponent } from './detail/detail.component';
 import { CategoryService } from './services/category.service';
 import { DetailService } from './services/detail.service';
 import { CompareComponent } from './compare/compare.component';
-import { HomeComponent } from './home/home.component';
 
 const appRoutes:Routes = [
   { path: '', component: ShowcaseComponent },
@@ -24,8 +23,7 @@ const appRoutes:Routes = [
     AppComponent,
     ShowcaseComponent,
     DetailComponent,
-    CompareComponent,
-    HomeComponent
+    CompareComponent
   ],
   imports: [
     BrowserModule,

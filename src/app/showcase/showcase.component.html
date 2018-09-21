@@ -1,12 +1,17 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row py-2">
-        <div class="col-sm-12">
-            <div class="input-group input-group-lg">
+        <div class="col-sm-10 py-2">
+            <div class="input-group input-group-prepend">
                 <input type="text" class="form-control" placeholder="Buscar por marca" aria-label="Buscar por marca" [(ngModel)]="brand">
                 <div class="input-group-append">
                     <a class="btn btn-primary" routerLink="/home" [queryParams]="{search: brand}">Buscar</a>
                     <a class="btn btn-secondary" routerLink="/home">Cancelar</a>
                 </div>
+            </div>
+        </div>
+        <div class="col-sm-2 py-2">
+            <div class="input-group input-group-prepend">
+                <a class="btn btn-primary btn-md btn-block" routerLink="/compare">Comparar autos</a>
             </div>
         </div>
     </div>
@@ -21,7 +26,7 @@
                         <b>Marca:</b> {{ car.brand }} <br />
                         <b>Precio:</b> <span class="text-success">{{ car.price | currency:'COP'}}</span> <br />
                     </p>
-                    <div class="btn btn-primary bottom-align-text">Ver más</div>
+                    <div class="btn btn-outline-primary bottom-align-text">Ver detalle</div>
                 </div>
             </a>
         </div>

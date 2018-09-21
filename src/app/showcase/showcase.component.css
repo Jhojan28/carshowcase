@@ -11,6 +11,11 @@ a.no-decoration {
     position: relative;
 }
 
+.card:hover {
+    box-shadow: 1px 1px 5px 2px #888888;
+    transition: box-shadow .3s ease;
+}
+
 .bottom-align-text{
     position: absolute;
     bottom: 0;

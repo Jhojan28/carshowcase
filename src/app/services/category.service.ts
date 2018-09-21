@@ -9,9 +9,9 @@ export class CategoryService {
         { id:4, name: "Sistema de Frenos" },
         { id:5, name: "Ruedas" },
         { id:6, name: "Dimensiones" }
-    ]
+    ];
 
     getCategories() {
-        return this.categories
+        return this.categories;
     }
 }

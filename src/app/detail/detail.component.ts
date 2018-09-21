@@ -7,10 +7,10 @@ import { DetailService } from '../services/detail.service';
 	templateUrl: './detail.component.html'
 })
 export class DetailComponent {
-	id = null
-	car:any = {}
+	id = null;
+	car:any = {};
 	constructor(private route:ActivatedRoute, private detailService:DetailService) {
-		this.id = this.route.snapshot.params['id']
-		this.car = detailService.getDetail(this.id)
+		this.id = this.route.snapshot.params['id'];
+		this.car = detailService.getDetail(this.id);
 	}
 }

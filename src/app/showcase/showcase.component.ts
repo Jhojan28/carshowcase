@@ -8,17 +8,17 @@ import { ActivatedRoute } from '@angular/router';
 	styleUrls: ['./showcase.component.css']
 })
 export class ShowcaseComponent {
-	cars:any = []
-	search:string = ""
-	brand:string = ""
+	cars:any = [];
+	search:string = "";
+	brand:string = "";
 	constructor(private route:ActivatedRoute,private carSerivice:CarService) {
 		this.route.queryParamMap.subscribe(params => {
-			this.search = params.get("search")
+			this.search = params.get("search");
 			if(typeof this.search !== 'undefined' && this.search !== null && this.search !== "") {
-				this.cars = carSerivice.getCarsByBrand(this.search)
+				this.cars = carSerivice.getCarsByBrand(this.search);
 			} else {
-				this.cars = carSerivice.getCars()
-				this.brand = ""
+				this.cars = carSerivice.getCars();
+				this.brand = "";
 			}
 		})
 	}

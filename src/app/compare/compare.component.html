@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="card mb-3">
         <div class="card-body">
             <h5 class="card-title">Seleccionar vehiculo</h5>
@@ -34,7 +34,7 @@
                 <div *ngIf="detail == null || detail.detail.length == 0" class="alert alert-success" role="alert">
                     No hay caracteristicas disponibles para este vehiculo
                 </div>
-                <div *ngIf="detail != null && detail.detail.length > 0">
+                <div *ngIf="detail != null && detail.detail.length > 0" class="table-responsive">
                     <h5>{{ detail.car.model }}</h5>
                     <table class="table" *ngFor="let d of detail.detail">
                         <thead class="thead-dark">
@@ -44,7 +44,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let d2 of d.detail">
-                                <td width="50%">{{ d2.name }}</td>
+                                <td width="50%"><b>{{ d2.name }}</b></td>
                                 <td width="50%">{{ d2.description }}</td>
                             </tr>
                         </tbody>

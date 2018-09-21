@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="card mb-3">
         <img class="card-img-top" src="{{ car.car.picture }}" alt="Card image cap">
         <div class="card-body">
@@ -23,7 +23,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let det of detail.detail">
-                    <td width="50%">{{ det.name }}</td>
+                    <td width="50%"><b>{{ det.name }}</b></td>
                     <td width="50%">{{ det.description }}</td>
                 </tr>
             </tbody>

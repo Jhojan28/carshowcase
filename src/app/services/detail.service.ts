@@ -186,15 +186,15 @@ export class DetailService {
                 { name: "Peso (kgrs.)", description: "1370" }
             ]
         }
-    ]
+    ];
 
     constructor(private categoryService:CategoryService, private carService:CarService){}
 
     getDetail(id) {
-        const details:any = this.detail.filter(d=>d.carId == id)
-        let categories:any = []
+        const details:any = this.detail.filter(d=>d.carId == id);
+        let categories:any = [];
         details.forEach(detail => {     
-            categories.push({ category: this.categoryService.getCategories().find(category=>category.id == detail.categoryId), detail: detail.detail })
+            categories.push({ category: this.categoryService.getCategories().find(category=>category.id == detail.categoryId), detail: detail.detail });
         });
 
         return {
@@ -204,12 +204,12 @@ export class DetailService {
     }
 
     getDetails(ids:any) {
-        let response:any = []
-        let result:any = {}
+        let response:any = [];
+        let result:any = {};
         ids.forEach(id => {
-            result = this.getDetail(id)
-            response.push({ detail: result.detail, car: result.car })
+            result = this.getDetail(id);
+            response.push({ detail: result.detail, car: result.car });
         });
-        return response
+        return response;
     }
 }

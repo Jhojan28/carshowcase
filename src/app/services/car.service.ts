@@ -9,17 +9,17 @@ export class CarService {
         { id: 4, picture: 'assets/images/chevroletsail.jpg', model: 'CHEVROLET Sail LTZ', year: '2018', brand: 'Chevrolet', price: '42190000' },
         { id: 5, picture: 'assets/images/chevroletonix.jpg', model: 'CHEVROLET Onix LTZ MCM', year: '2018', brand: 'Chevrolet', price: '44980000' },
         { id: 6, picture: 'assets/images/mercedezbenz.jpg', model: 'Mercedes Benz Clase A 200 Urban', year: '2008', brand: 'Mercedes Benz', price: '110900000' }
-    ]
+    ];
 
     getCars() {
-        return this.cars
+        return this.cars;
     }
 
     getCarsByBrand(brand) {
-        return this.cars.filter(c=>c.brand.toLowerCase() == brand.toLowerCase())
+        return this.cars.filter(c=>c.brand.toLowerCase() == brand.toLowerCase());
     }
 
     getCar(id) {
-        return this.cars.find(c=>c.id == id) || null
+        return this.cars.find(c=>c.id == id) || null;
     }
 }
